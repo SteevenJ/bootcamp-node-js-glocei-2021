@@ -1,5 +1,4 @@
-const fs = require('fs')
+require('./utils.js')
 
-fs.writeFileSync("notes.txt", 'This file was reated by Node.js')
-
-fs.appendFileSync("notes.txt", 'Other line from Node.js')
+const name = "Steeven"
+console.log(name)
