@@ -1,8 +1,8 @@
 //require('./utils.js')
-const fisrtName = require('./utils')
-const func = require('./notes')
+const validator = require('validator')
+const getNotes = require('./notes')
 
-//const name = "Steeven"
-console.log(fisrtName)
+console.log(getNotes())
 
-console.log(func())
+console.log(validator.isEmail('carlos@gmail.com'))
+console.log(validator.isURL('https://www.npmjs.com/package/validator'))
