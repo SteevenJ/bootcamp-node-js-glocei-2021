@@ -8,4 +8,4 @@ console.log(getNotes())
 console.log(validator.isEmail('carlos@gmail.com'))
 console.log(validator.isURL('https://www.npmjs.com/package/validator'))
 
-console.log(chalk.green('Hello world!'));
+console.log(chalk.inverse.blue.bold('Hello world!'));
