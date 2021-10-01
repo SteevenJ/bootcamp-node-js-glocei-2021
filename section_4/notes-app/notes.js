@@ -24,7 +24,7 @@ const saveNotes = (notes) => {
         const dataJSON = JSON.stringify(notes)
         fs.writeFileSync('notes.json', dataJSON)
     } catch(e){
-        return null
+        console.log('Error')
     }
 }
 
@@ -54,8 +54,23 @@ const removeNote = (title) => {
     }
 }
 
+const listNotes = () => {
+
+    console.log(chalk.blue.inverse("Your notes"))
+    try{
+        notes = loadNotes()
+        notes.forEach(note => {
+            console.log(note.title)
+        })
+    } catch(e){
+        //console.log(e)
+        console.log('Nothing to show')
+    }
+}
+
 module.exports = {
     getNotes: getNotes,
     addNote: addNote,
-    removeNote: removeNote
+    removeNote: removeNote,
+    listNotes: listNotes
 }
