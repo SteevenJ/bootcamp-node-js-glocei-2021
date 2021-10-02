@@ -28,6 +28,10 @@ app.get('/help', (req, res) => {
     })
 })
 
+app.get('/help/*', (req, res) => {
+    res.send('Help article')
+})
+
 app.get('/about', (req, res) => {
     res.render('about', {
         title: 'My about',
@@ -39,6 +43,13 @@ app.get('/weather', (req, res) => {
     res.send({
         forecast: 'It is snowing',
         location: 'Medellin'
+    })
+})
+
+app.get('*', (req, res) => {
+    res.render('error', {
+        title: 'Error 404',
+        name: 'Steeven Jaramillo'
     })
 })
 
