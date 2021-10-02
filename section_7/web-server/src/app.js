@@ -3,11 +3,11 @@ const express = require('express')
 const app = express()
 
 app.get('/', (req, res) => {
-    res.send('Hello')
+    res.send('<h1>Index</h1>')
 })
 
 app.get('/help', (req, res) => {
-    res.send('Help')
+    res.send('<h1>Help</h1>')
 })
 
 app.get('/about', (req, res) => {
@@ -15,7 +15,10 @@ app.get('/about', (req, res) => {
 })
 
 app.get('/weather', (req, res) => {
-    res.send('<h1>Weather</h1>')
+    res.send({
+        forecast: 'It is snowing',
+        location: 'Medellin'
+    })
 })
 
 app.listen(3000, () => {
