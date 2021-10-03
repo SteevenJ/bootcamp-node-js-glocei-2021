@@ -10,7 +10,7 @@ const geocode = (address, callback) => {
             callback("Error on body"+ body.error, undefined)
         }else{
             const features = body.features
-            if(!features){
+            if(!features || features.length == 0){
                 callback("Place not found", undefined)
             }else{
                 callback(undefined, {
